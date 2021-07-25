@@ -1,0 +1,99 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #formationForm="ngForm">
+
+
+
+
+
+
+
+      <div class="form-group">
+        <label for="name"> Formation's name</label>
+        <input type="text" [(ngModel)]="formationss.intituleFormation"
+          class="form-control"
+          id="intituleFormation"
+          name="intituleFormation"
+          placeholder="Enter the intitule "
+          required #name="ngModel">
+      </div>
+
+
+
+
+
+      <div class="form-group">
+        <label for="name">Description </label>
+        <input type="text" [(ngModel)]="formationss.description"
+          class="form-control"
+          id="description"
+          name="description"
+
+          placeholder="Enter the description "
+          required #name="ngModel">
+      </div>
+
+
+
+
+      <div class="form-group">
+        <label for="name">Type Formation </label>
+       <select id="typeFormation"   name="typeFormation" [(ngModel)]="formationss.typeFormation"
+       class="form-control"           placeholder="Enter the type "
+       >
+       <option value="UXUI"> UXUI</option>
+       <option value="SPRINGBOOT"> SPRINGBOOT</option>
+       <option value="Angular"> Angular</option>
+       <option value="HTML_CSS"> HTML_CSS</option>
+       <option value="Adobe_ps"> Adobe_ps</option>
+
+       </select>
+           </div>
+
+
+
+           <div class="form-group">
+            <label >Duree </label>
+               <input type="radio"     id=" duree "  name="duree" value="Semestre"   [(ngModel)]="formationss.duree" /> Semestre
+               <input type="radio"     id=" duree "  name="duree" value="Trimestre"   [(ngModel)]="formationss.duree" />Trimestre
+              </div>
+
+              <div class="form-group">
+                <label for="name">Charge horaire
+                </label>
+                <input type="text" [(ngModel)]="formationss.chargeHoraire"
+                  class="form-control"
+                  id="chargeHoraire"
+                  name="chargeHoraire"
+                  placeholder="Enter the duration "
+                  required #name="ngModel">
+              </div>
+
+
+
+
+           <div class="form-group">
+            <label >Mode </label>
+               <input type="radio"     id=" mode "  name="mode" value="Presentiel"   [(ngModel)]="formationss.mode" /> Presentiel
+               <input type="radio"     id=" mode "  name="mode" value="En_Ligne"   [(ngModel)]="formationss.mode" />En Ligne
+              </div>
+
+
+
+              <div class="form-group">
+                <label for="name">Price </label>
+                <input type="text" [(ngModel)]="formationss.prix"
+                  class="form-control"
+                  id="prix"
+                  name="prix"
+                  placeholder="Enter the price "
+                  required #name="ngModel">
+              </div>
+
+
+
+      <button type="submit" [disabled]="!formationForm.form.valid"
+        class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>

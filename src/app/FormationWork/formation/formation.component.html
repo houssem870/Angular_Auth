@@ -1,0 +1,42 @@
+
+<p>formation works!</p>
+
+
+<table>
+  <thead>
+    <th>IdFormation</th>
+    <th>IntituleFormation</th>
+    <th>Description</th>
+    <th>Prix</th>
+    <th>ChargeHoraire</th>
+    <th>Duree</th>
+    <th>Mode</th>
+    <th>Debut</th>
+
+  </thead>
+
+
+  <tbody>
+
+
+<tr *ngFor="let formations of formations">
+
+  <td>{{formations.idFormation}}</td>
+  <td>{{formations.intituleFormation}}</td>
+  <td>{{formations.description}}</td>
+  <td>{{formations.prix}}</td>
+  <td>{{formations.chargeHoraire}}</td>
+  <td>{{formations.duree}}</td>
+  <td>{{formations.mode}}</td>
+  <td>{{formations.debut}}</td>
+
+
+
+
+</tr>
+
+
+
+  </tbody>
+</table>
+
