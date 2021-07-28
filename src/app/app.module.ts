@@ -10,6 +10,10 @@ import { QuizComponent } from './QuizWork/quiz/quiz.component';
 import { QuizFormComponent } from './QuizWork/quiz-form/quiz-form.component';
 import { SignUpComponent } from './auth/signUp/signUp.component';
 import {AuthInterceptor} from "./auth/AuthInterceptor.interceptor";
+import { ReactiveFormsModule } from '@angular/forms';
+
+import {AuthService} from "../app/auth/Auth.service";
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,19 +22,25 @@ import {AuthInterceptor} from "./auth/AuthInterceptor.interceptor";
     FormationFormComponent,
     QuizComponent,
     QuizFormComponent,
-    SignUpComponent
+    SignUpComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [ {
     provide: HTTP_INTERCEPTORS,
     useClass: AuthInterceptor,
     multi: true
-  }],
+  },
+    AuthService
+
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
