@@ -4,9 +4,11 @@ import {SignUpInfo} from "../model/sign-up-info/signUpInfo.module";
 import { Injectable } from '@angular/core';
 
 
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 
+const httpOptions = {
+     headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
 };
 
 @Injectable({
@@ -23,6 +25,6 @@ export class AuthService {
 
   // SignUpInfo(name,username,email,role,password)
   signUp(info: any): Observable<any> {
-    return this.http.post(this.signupUrl, info, httpOptions);
+    return this.http.post(this.signupUrl, info);
   }
 }

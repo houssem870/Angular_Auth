@@ -46,16 +46,16 @@ export class SignUpComponent implements OnInit {
     console.log("Address2 :- "+this.form.firstname.value)
     console.log("City :- "+this.form.adress.value)
     console.log("State :- "+this.form.lastname.value)*/
-    const myForm = new FormData();
-    myForm.append('firstname',this.form.firstname.value);
-    myForm.append('lastname',this.form.lastname.value);
-    myForm.append('email',this.form.email.value);
-    myForm.append('telephone',this.form.telephone.value);
-    myForm.append('password',this.form.password.value);
-    myForm.append('username',this.form.username.value);
-    myForm.append('adress',this.form.adress.value);
-    myForm.append('role',this.option);
-
+    let myForm = {
+    'firstName': this.form.firstname.value,
+    'lastName':this.form.lastname.value,
+    'email':this.form.email.value,
+    'telephone':this.form.telephone.value,
+    'password':this.form.password.value,
+    'username':this.form.username.value,
+    'adress':this.form.adress.value,
+    'role':this.option,
+}
 
 
 
@@ -65,7 +65,7 @@ export class SignUpComponent implements OnInit {
         console.log(data);
         this.isRegistered = true;
 
-
+        this.router.navigateByUrl('home');
 
       },
       error => {
@@ -73,7 +73,10 @@ export class SignUpComponent implements OnInit {
         this.errorMessage = error.error.message;
 
       }
-    );
+    ),() => {
+      this.isRegistered = true;
+      this.router.navigate(['home']);
+    };
   }
 
 
