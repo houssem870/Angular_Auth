@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService} from "../Auth.service";
+import {AuthService} from "../auth/Auth.service";
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import {cachingDisabled} from "@angular-devkit/build-angular/src/utils/environment-options";
 
 @Component({
   selector: 'app-sign-up',
@@ -75,7 +76,9 @@ export class SignUpComponent implements OnInit {
       }
     ),() => {
       this.isRegistered = true;
-      this.router.navigate(['home']);
+
+      this.router.navigate(['/home']);
+
     };
   }
 

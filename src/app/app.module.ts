@@ -8,12 +8,13 @@ import { FormationComponent } from './FormationWork/formation/formation.componen
 import { FormationFormComponent } from './FormationWork/formation-form/formation-form.component';
 import { QuizComponent } from './QuizWork/quiz/quiz.component';
 import { QuizFormComponent } from './QuizWork/quiz-form/quiz-form.component';
-import { SignUpComponent } from './auth/signUp/signUp.component';
+import { SignUpComponent } from './signUp/signUp.component';
 import {AuthInterceptor} from "./auth/AuthInterceptor.interceptor";
 import { ReactiveFormsModule } from '@angular/forms';
 
 import {AuthService} from "../app/auth/Auth.service";
 import { HomeComponent } from './home/home.component';
+import { SignInComponent } from './signIn/signIn.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HomeComponent } from './home/home.component';
     QuizComponent,
     QuizFormComponent,
     SignUpComponent,
-    HomeComponent
+    HomeComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

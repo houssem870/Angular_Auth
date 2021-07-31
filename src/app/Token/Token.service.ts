@@ -7,7 +7,7 @@ const AUTHORITIES_KEY = 'AuthAuthorities';
 @Injectable({
   providedIn: 'root'
 })
-export class tokenService {
+export class TokenService {
   private roles: Array<any> = [];
   constructor() { }
 

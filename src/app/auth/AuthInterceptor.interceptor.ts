@@ -1,13 +1,13 @@
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http';
-import {tokenService} from './Token/token.service'
+import {TokenService} from '../Token/Token.service'
 
 const TOKEN_HEADER_KEY = 'Authorization';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor( public token: tokenService) {
+  constructor( public token: TokenService) {
   }
 
 
